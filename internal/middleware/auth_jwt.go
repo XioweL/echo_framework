@@ -9,7 +9,7 @@ import (
 
 var JwtMiddleware = middleware.JWTWithConfig(middleware.JWTConfig{
 	SigningKey:  []byte("12345"),
-	Claims:      &jwt.StandardClaims{},
+	Claims:      &jwt.RegisteredClaims{},
 	TokenLookup: "header:Authorization",
 	AuthScheme:  "Bearer",
 	ErrorHandlerWithContext: func(c echo.Context, err error) error {
